@@ -1,0 +1,45 @@
+@model Models.Car
+<div class="modal fade" tabindex="-1" role="dialog" id="guess-car-modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Guess Car Price</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <input asp-for="Id" type="hidden">
+                <div class="form-group">
+                    <label>Make: </label>
+                    <label id="MakeLabel"></label>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Model"></label>
+                    <label id="ModelLabel"></label>
+                </div>
+                <div class="form-group">
+                    <label id="Year">Year: </label>
+                    <label id="YearLabel"></label>
+                </div>
+                <div class="form-group">
+                    <label id="Doors">Doors: </label>
+                    <label id="DoorsLabel"></label>
+                </div>
+                <div class="form-group">
+                    <label id="Color">Color: </label>
+                    <label id="ColorLabel"></label>
+                </div>
+                <div>
+                    <input type="hidden" id="idHiddenPrice"></input>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Price" style="margin-top:25px;"></label>
+                    <input id="PriceToGuess" class="form-control">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="check-result">Check Result</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

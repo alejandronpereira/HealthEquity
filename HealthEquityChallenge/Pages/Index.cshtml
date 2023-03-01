@@ -1,0 +1,173 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<button class="btn btn-primary" id="get-cars">Get Cars</button> 
+<button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#car-modal" id="new-car">New Car</button>
+<button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#guess-car-modal" id="guess-new-car">Guess Car Price</button>
+<ul class="results mt-3"></ul>
+<partial name="_CarModal" model="new Models.Car()"/>
+<partial name="_GuessCarModal" model="new Models.Car()"/>
+<partial name="_SuccessModal" />
+<partial name="_NotSuccessModal" />
+
+@section scripts{
+    <script>
+        const list = document.querySelector('ul.results');
+        const getAll = document.getElementById('get-cars');
+        const save = document.getElementById('save-car');
+        const remove = document.getElementById('delete-car');
+        const createNew = document.getElementById('new-car');
+        const guessCar = document.getElementById('guess-new-car');
+        const checkResult = document.getElementById('check-result');
+
+        getAll.addEventListener('click', () => {
+            showCars();
+        });
+
+        save.addEventListener('click', () => {
+            saveCar();
+        });
+
+        remove.addEventListener('click', () => {
+            deleteCar(document.getElementById("Id").value);
+        });
+
+        createNew.addEventListener('click', () => {
+            newCar();
+        });
+
+        guessCar.addEventListener('click', () => {
+            getRandomCar();
+        });
+
+        checkResult.addEventListener('click', () => {
+            checkGuessResult();
+        });
+
+        const showCars = () => {
+            list.innerHTML = '';
+            fetch("/api/cars")
+            .then(response => response.json())
+            .then(cars => {
+                for(let i = 0;i < cars.length;i++){
+                    let item = document.createElement('li');
+                    item.innerText =  `${cars[i].id} ${cars[i].make} ${cars[i].model}, ${cars[i].year} £${cars[i].price}`;
+                    item.classList.add('edit-car');
+                    item.dataset.id = cars[i].id;
+                    item.dataset.bsToggle = 'modal';
+                    item.dataset.bsTarget = '#car-modal';
+                    item.addEventListener('click', (event) =>{
+                        getCar(event.target.dataset.id);
+                    });
+                    list.appendChild(item);
+                }
+            });
+        }
+
+        const getCar = (id) => {
+            fetch(`/api/car/${id}`)
+            .then(response => response.json())
+            .then(car => {
+                document.getElementById('Id').value = car.id;
+                document.getElementById('Model').value = car.model;
+                document.getElementById('Make').value = car.make; 
+                document.getElementById('Year').value = car.year;
+                document.getElementById('Doors').value = car.doors; 
+                document.getElementById('Color').value = car.color; 
+                document.getElementById('Price').value = car.price; 
+            });
+        }
+
+        const getCarToGuess = (id) => {
+            fetch(`/api/car/${id}`)
+            .then(response => response.json())
+            .then(car => {
+                document.getElementById('ModelLabel').innerText = car.model;
+                document.getElementById('MakeLabel').innerText = car.make; 
+                document.getElementById('YearLabel').innerText = car.year;
+                document.getElementById('DoorsLabel').innerText = car.doors; 
+                document.getElementById('ColorLabel').innerText = car.color; 
+                document.getElementById('idHiddenPrice').value = car.price;
+            });
+        }
+
+        const saveCar = () => {
+            const model = {
+                id:  document.getElementById('Id').value,
+                model: document.getElementById('Model').value,
+                make: document.getElementById('Make').value,
+                year: document.getElementById('Year').value,
+                doors: document.getElementById('Doors').value,
+                color: document.getElementById('Color').value,
+                price: document.getElementById('Price').value,
+                };
+                fetch('/api/save',  {  
+                    method: model.id > 0 ? 'put' : 'post',
+                    headers: {
+                        "Content-type": "application/json",
+                    },
+                    body: JSON.stringify(model)
+                })
+                .then(res => showCars());
+            }
+
+            const deleteCar = (id) => {
+                   fetch('/api/delete/' + id, {
+                        method: 'delete',
+                    })                 
+                    .then(res => showCars())
+            }
+
+            const newCar = () => {
+                document.getElementById('Id').value = 0;
+                document.getElementById('Model').value = null;
+                document.getElementById('Make').value = null; 
+                document.getElementById('Year').value = 0;
+                document.getElementById('Doors').value = 0; 
+                document.getElementById('Color').value = null; 
+                document.getElementById('Price').value = 0.00; 
+            }
+
+            const getRandomCar = () => {
+
+                fetch("/api/cars")
+                .then(response => response.json())
+                .then(cars => { getCarToGuess(generateRandomNumberToGuess(cars.length + 1));
+                });
+
+            }
+
+            const generateRandomNumberToGuess = (max) => {
+
+                let difference = max - 1;
+                let rand = Math.random();
+                rand = Math.floor( rand * difference);
+                rand = rand + 1;
+
+                return rand;
+            }
+
+            const checkGuessResult = () => {
+                let priceEntered = document.getElementById('PriceToGuess').value;
+                let actualPrice = parseFloat(document.getElementById('idHiddenPrice').value);
+
+                let result = priceEntered - actualPrice;
+
+                console.info("priceEntered",priceEntered);
+                console.info("actualPrice",actualPrice);
+                console.info("result",result);
+
+                if(result > -5000 && result < 5000){
+                     $("#success-modal").modal('show');
+                } else{
+                     $("#not-success-modal").modal('show');
+                }
+
+            }
+
+
+            
+    </script>
+}
