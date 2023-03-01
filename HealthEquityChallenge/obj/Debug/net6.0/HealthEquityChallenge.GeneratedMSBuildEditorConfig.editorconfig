@@ -8,53 +8,53 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = HealthEquityChallenge
 build_property.RootNamespace = HealthEquityChallenge
-build_property.ProjectDir = C:\Users\aleve\source\repos\HealthEquity\HealthEquityChallenge\
+build_property.ProjectDir = c:\Users\aleve\source\repos\Cobra\HealthEquity\HealthEquityChallenge\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\aleve\source\repos\HealthEquity\HealthEquityChallenge
+build_property.MSBuildProjectDirectory = c:\Users\aleve\source\repos\Cobra\HealthEquity\HealthEquityChallenge
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/aleve/source/repos/HealthEquity/HealthEquityChallenge/Pages/Error.cshtml]
+[c:/Users/aleve/source/repos/Cobra/HealthEquity/HealthEquityChallenge/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aleve/source/repos/HealthEquity/HealthEquityChallenge/Pages/Index.cshtml]
+[c:/Users/aleve/source/repos/Cobra/HealthEquity/HealthEquityChallenge/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aleve/source/repos/HealthEquity/HealthEquityChallenge/Pages/Privacy.cshtml]
+[c:/Users/aleve/source/repos/Cobra/HealthEquity/HealthEquityChallenge/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aleve/source/repos/HealthEquity/HealthEquityChallenge/Pages/Shared/_CarModal.cshtml]
+[c:/Users/aleve/source/repos/Cobra/HealthEquity/HealthEquityChallenge/Pages/Shared/_CarModal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9DYXJNb2RhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aleve/source/repos/HealthEquity/HealthEquityChallenge/Pages/Shared/_GuessCarModal.cshtml]
+[c:/Users/aleve/source/repos/Cobra/HealthEquity/HealthEquityChallenge/Pages/Shared/_GuessCarModal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9HdWVzc0Nhck1vZGFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aleve/source/repos/HealthEquity/HealthEquityChallenge/Pages/Shared/_NotSuccessModal.cshtml]
+[c:/Users/aleve/source/repos/Cobra/HealthEquity/HealthEquityChallenge/Pages/Shared/_NotSuccessModal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Ob3RTdWNjZXNzTW9kYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aleve/source/repos/HealthEquity/HealthEquityChallenge/Pages/Shared/_SuccessModal.cshtml]
+[c:/Users/aleve/source/repos/Cobra/HealthEquity/HealthEquityChallenge/Pages/Shared/_SuccessModal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9TdWNjZXNzTW9kYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aleve/source/repos/HealthEquity/HealthEquityChallenge/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[c:/Users/aleve/source/repos/Cobra/HealthEquity/HealthEquityChallenge/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aleve/source/repos/HealthEquity/HealthEquityChallenge/Pages/_ViewImports.cshtml]
+[c:/Users/aleve/source/repos/Cobra/HealthEquity/HealthEquityChallenge/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aleve/source/repos/HealthEquity/HealthEquityChallenge/Pages/_ViewStart.cshtml]
+[c:/Users/aleve/source/repos/Cobra/HealthEquity/HealthEquityChallenge/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aleve/source/repos/HealthEquity/HealthEquityChallenge/Pages/Shared/_Layout.cshtml]
+[c:/Users/aleve/source/repos/Cobra/HealthEquity/HealthEquityChallenge/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-2vbulps3f2
